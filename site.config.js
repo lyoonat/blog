@@ -7,7 +7,7 @@ const CONFIG = {
     bio: "Living Contradiction",
     email: "lyoonatelie@gmail.com",
     linkedin: "https://www.linkedin.com/in/nslyoo",
-    github: "https://github.com/lyoonat",
+    github: "https://www.github.com/lyoonat",
     instagram: "",
   },
   projects: [
