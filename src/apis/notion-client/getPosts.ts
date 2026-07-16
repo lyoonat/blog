@@ -37,7 +37,22 @@ export const getPosts = async () => {
     const data = []
     for (let i = 0; i < pageIds.length; i++) {
       const id = pageIds[i]
+
+      // Skip any page ID that doesn't resolve to a real block.
+      // This happens with stale/phantom references left over in Notion
+      // (e.g. trashed pages, template stubs) and would otherwise crash
+      // the build with "Cannot read properties of undefined (reading 'value')".
+      if (!block[id]) {
+        console.warn(
+          `[getPosts] Skipping page ID "${id}" — no matching block found in Notion response.`
+        )
+        continue
+      }
+
       const properties = (await getPageProperties(id, block, schema)) || null
+      if (!properties) {
+        continue
+      }
       // Add fullwidth, createdtime to properties
       const pageBlockValue = (block[id].value as any)?.value ?? block[id].value
       properties.createdTime = new Date(
