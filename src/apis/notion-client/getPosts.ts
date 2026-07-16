@@ -22,7 +22,16 @@ export const getPosts = async () => {
   const block = response.block
   const schema = collection?.schema
 
-  const blockValue = (block[id].value as any)?.value ?? block[id].value
+  const blockEntry = block[id]
+  if (!blockEntry) {
+  console.error(
+    `[getPosts] Root page block not found for id "${id}". ` +
+      `Available block keys (first 5): ${Object.keys(block).slice(0, 5).join(", ")} ` +
+      `(total: ${Object.keys(block).length})`
+  )
+  return []
+}
+const blockValue = (blockEntry.value as any)?.value ?? blockEntry.value
   const rawMetadata = blockValue
 
   // Check Type
