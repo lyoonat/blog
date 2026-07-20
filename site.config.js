@@ -2,7 +2,7 @@ const CONFIG = {
   // profile setting (required)
   profile: {
     name: "Natly",
-    image: "/mind-charge-svgrepo-com.svg", // If you want to create your own notion avatar, check out https://notion-avatar.vercel.app
+    image: "/tibbixel-dot-com-1542-svg.svg", // If you want to create your own notion avatar, check out https://notion-avatar.vercel.app
     role: "Backend dev-yet",
     bio: "Living Contradiction",
     email: "lyoonatelie@gmail.com",
@@ -19,11 +19,11 @@ const CONFIG = {
   // blog setting (required)
   blog: {
     title: "Hoog",
-    description: "welcome to Hoog!",
+    description: "Welcome to Hoog!",
     scheme: "dark", // 'light' | 'dark' | 'system'
   },
 
-  // CONFIG configration (required)
+  // CONFIG configuration (required)
   link: "https://hoolog.vercel.app",
   since: 2026, // If leave this empty, current year will be used.
   lang: "en-US", // ['en-US', 'zh-CN', 'zh-HK', 'zh-TW', 'ja-JP', 'es-ES', 'ko-KR']
