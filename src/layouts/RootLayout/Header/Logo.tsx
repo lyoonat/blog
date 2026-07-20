@@ -21,4 +21,4 @@ export default Logo
 const StyledWrapper = styled(Link)`
   display: flex;
   align-items: center;
-`
+  margin-top: 1.5rem;
